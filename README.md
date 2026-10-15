@@ -2,7 +2,7 @@
 
 An end-to-end virtual enterprise lab built with Oracle VirtualBox, Windows Server 2022, and Windows 11 Pro. The project demonstrates centralized identity, DNS, domain membership, Group Policy, role-based access, and secure SMB file sharing.
 
-[Download the complete black-and-white DOCX](./Windows_Server_2022_AD_Lab_Portfolio_BW.docx)
+[Download the updated Active Directory portfolio](Windows_Server_2022_AD_Lab_Portfolio_Page_Numbers_Fixed.docx)
 
 ## Project summary
 
