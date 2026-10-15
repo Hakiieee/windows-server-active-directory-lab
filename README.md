@@ -128,3 +128,44 @@ These checks verified addressing, DNS resolution, server reachability, domain id
 ## Lessons learned
 
 The project reinforced that Active Directory depends on correct DNS configuration, and that effective file access is the intersection of share and NTFS permissions. It also showed the value of validating each layer separately: network reachability, name resolution, authentication, policy application, group membership, and resource authorization.
+
+## Active Directory User Auditing with PowerShell
+
+### Objective
+
+Practice retrieving and verifying domain employee accounts using PowerShell and Active Directory.
+
+### Environment
+
+- Domain Controller: DC02
+- Operating System: Windows Server 2022
+- Domain: lab.local
+- Organizational Unit: Employees → HR
+
+### PowerShell Command
+
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=HR,OU=Employees,DC=lab,DC=local" |
+Select-Object Name, SamAccountName, Enabled
+```
+
+### Results
+
+| Employee | Username | Enabled |
+|---|---|---|
+| Alex Morgan | alex.morgan | True |
+| Dizon | dizon | True |
+
+### What I Learned
+
+- `Get-ADUser` retrieves Active Directory user accounts.
+- `-Filter *` retrieves all matching users in the search scope.
+- `-SearchBase` specifies which Organizational Unit to search.
+- `Select-Object` displays selected account properties.
+- `Enabled = True` means the user account is enabled, but does not prove that the account is unlocked or currently logged in.
+
+### Real-World IT Application
+
+IT Support Technicians and System Administrators use PowerShell to audit employee accounts, verify account status, and troubleshoot Active Directory user-management issues.
+
+This lab helped me understand how to manage and inspect Active Directory accounts through command-line administration.
